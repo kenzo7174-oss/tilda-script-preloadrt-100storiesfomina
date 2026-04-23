@@ -41,15 +41,6 @@
   }
 
   function runPreloader() {
-// sessionStorage — показ один раз
-  try {
-    if (sessionStorage.getItem('fominPreloaderShown') === '1') {
-      var el = document.getElementById('fomin-preloader');
-      if (el) el.remove();
-      return;
-    }
-    sessionStorage.setItem('fominPreloaderShown', '1');
-  } catch (e) {}
 
   var preloader = document.getElementById('fomin-preloader');
   var stage = document.getElementById('fp-stage');
