@@ -336,13 +336,17 @@
   var TOTAL_MS     = 3000;
   var FADE_OUT_MS  = 600;
 
-  var finished = false;
+ var finished = false;
   function hidePreloader() {
     if (finished) return;
     finished = true;
     preloader.classList.add('fp-hiding');
     setTimeout(function(){
       if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      
+      // ВОТ ЭТА СТРОЧКА: она возвращает скролл и показывает сайт
+      document.body.classList.remove('loading-process');
+      
     }, FADE_OUT_MS + 50);
   }
 
